@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background-color: rgb(228, 219, 180);  
+}
+
+#calculator {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  padding: 20px 20px 10px;
+  background-color: gray;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+#display {
+  width: 100%;
+  height: 200px;
+  background-color: hsl(0, 0%, 15%);
+  color: white;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  text-align: right;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#display::placeholder {
+  color: hsl(0, 58%, 50%);
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  border-radius: 50px;
+  margin-top: 10%;
+}
+
+#equalBtn {
+  border-radius: 15px;
+  grid-column: span 2;
+  width: 95%;
+  background-color: orange;
+  color: white;
+}
+
+button {
+  width: min(80px, 10vw);
+  height: min(80px, 10vw);
+  border: none;
+  border-radius: 17px;
+  background-color: hsl(0, 0%, 100%);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  cursor: grab;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+  background-color: #3e3b3b;
+  color: #fff;
+  border-width: 5px;
+}
+
+button:active {
+  background-color: #e3dddd;
+}
+
+@media (max-width: 600px) {
+  #calculator {
+    max-width: 50%;
+    padding: 10px;
+  }
+
+  #keys {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 6px;
+    padding: 6px;
+  }
+
+  #display {
+    width: 100%;
+    font-size: clamp(1.2rem, 8vw, 2rem);
+    padding: 10px;
+  }
+
+  button {
+    margin: auto;
+    font-size: 5vw;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent; 
+  }
+
+  button:not(:active) {
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    transition: background-color 0s, border 0s;
+  }
+}
